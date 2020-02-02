@@ -46,7 +46,7 @@ var questions = [
 ];
 
 // Variable to hold our setInterval
-var timer;
+// var timer;
 
 var game = {
   questions: questions,
