@@ -25,7 +25,7 @@ module.exports = function(app) {
   });
 
   // Load example page and pass in an example by id
-  app.get("/createQuestions/:id", function(req, res) {
+  app.get("/createQuestions/:id", function(req) {
     db.Tweets.findOne({ where: { id: req.params.id } }).then(function(
       foundTweet
     ) {
