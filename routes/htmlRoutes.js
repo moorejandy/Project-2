@@ -3,10 +3,12 @@ var db = require("../models");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
+    db.Tweets.findAll({}).then(function(foundTweets) {
+      console.log("FOUND TWEETS!, ", foundTweets);
+      // You want to send an array of the tweet strings back rather than an array of objects
       res.render("index", {
         msg: "Welcome!",
-        examples: dbExamples
+        examples: foundTweets
       });
     });
   });
@@ -19,6 +21,25 @@ module.exports = function(app) {
       res.render("example", {
         example: dbExample
       });
+    });
+  });
+
+  // Load example page and pass in an example by id
+  app.get("/createQuestions/:id", function(req, res) {
+    db.Tweets.findOne({ where: { id: req.params.id } }).then(function(
+      foundTweet
+    ) {
+      if (foundTweet) {
+        db.Qanswers.create({
+          TweetId: foundTweet.id,
+          question: "Fill in the blank",
+          ansOne: "Hillary Clinton",
+          anstwo: "Bette Midler",
+          ansThree: "Megyn Kelly",
+          ansFour: "Betty White",
+          correct: "Bette Midler"
+        });
+      }
     });
   });
 

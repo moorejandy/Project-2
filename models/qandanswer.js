@@ -18,14 +18,16 @@ module.exports = function(sequelize, DataTypes) {
       force: true
     })
     .then(function() {
-      Tweets.create({
-        question: "Fill in the blank",
-        ansOne: "Hillary Clinton",
-        anstwo: "Bette Midler",
-        ansThree: "Megyn Kelly",
-        ansFour: "Betty White",
-        correct: "Bette Midler"
-      });
+      // You need to have the tweet foreign key to create sample data here
+      // It may be better to use a seeds.sql file or have a route that creates it
+      // Qanswers.create({
+      //   question: "Fill in the blank",
+      //   ansOne: "Hillary Clinton",
+      //   anstwo: "Bette Midler",
+      //   ansThree: "Megyn Kelly",
+      //   ansFour: "Betty White",
+      //   correct: "Bette Midler"
+      // });
     });
   Qanswers.associate = function(models) {
     // We're saying that a Post should belong to an Author

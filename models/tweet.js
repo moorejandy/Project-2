@@ -1,9 +1,19 @@
 var Sequelize = require("sequelize");
+var config = require("../config/config.json");
 
-var connection = new Sequelize("Trump_db", "root", "", {
-  host: "localhost",
-  dialect: "mysql"
-});
+var env = process.env.NODE_ENV || "development";
+
+var activeConfig = config[env];
+
+var connection = new Sequelize(
+  activeConfig.database,
+  activeConfig.username,
+  activeConfig.password,
+  {
+    host: "localhost",
+    dialect: "mysql"
+  }
+);
 
 module.exports = function(sequelize, DataTypes) {
   var Tweets = sequelize.define("Tweets", {
