@@ -14,12 +14,12 @@ module.exports = function(app) {
   });
 
   // Load example page and pass in an example by id
-  app.get("/example/:id", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(
-      dbExample
+  app.get("/tweet/:id", function(req, res) {
+    db.Tweets.findOne({ where: { id: req.params.id } }).then(function(
+      dbTweets
     ) {
       res.render("example", {
-        example: dbExample
+        tweet: dbTweets
       });
     });
   });
