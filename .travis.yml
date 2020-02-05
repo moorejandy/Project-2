@@ -11,5 +11,5 @@ cache:
 services: 
   -mysql
 
-  before_install:
-    -mysql -e "CREATE DATABASE testdb;"
+  # before_install:
+  #   -mysql -e "CREATE DATABASE testdb;"
