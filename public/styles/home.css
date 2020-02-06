@@ -1,0 +1,23 @@
+.welcome-heading{
+}
+h1{
+    font-size: 60px;
+}
+
+h2{
+    font-size: 30px;
+}
+
+h3{
+    font-size: 22px;
+}
+body{
+    background-color: grey;
+    text-align: center;
+}
+
+.input-box{
+    height: 30px;
+    font-size:18px; 
+}
+
