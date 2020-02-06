@@ -17,10 +17,16 @@
         </form>
         <h3>Examples:</h3>
         <ul id="example-list" class="list-group">
+<<<<<<< HEAD
+          {{#each examples}}
+          <!---this is where we need to change to match the data coming from the html route page  -->
+=======
           {{#each tweet}}
+>>>>>>> 55eb05a3d966e3bafcdf39e28cf04182538754b8
           <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
+            <a href="example/{{this.id}}">{{this.tweet}}</a>
+            {{!-- <button class="btn btn-danger float-right delete">ｘ</button> --}}
+            <!--Is this where we should also inject the answer?
           </li>
           {{/each}}
         </ul>
