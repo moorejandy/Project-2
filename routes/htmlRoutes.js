@@ -25,7 +25,6 @@ module.exports = function(app) {
   // Make sure you are getting JS objects by using { raw: true }
   // rename the variables to reference tweet instead of example so dbExample => dbTweet // this is just a convention thing, it will still work without renaming
   app.get("/example/:id", function(req, res) {
-<<<<<<< HEAD
     db.Example.findOne({ where: { id: req.params.id }, raw: true }).then(
       function(dbExample) {
         res.render("example", {
@@ -33,20 +32,6 @@ module.exports = function(app) {
         });
       }
     );
-=======
-    db.Example.findOne({ where: { id: req.params.id }, raw: true }).then(function(
-      dbExample
-
-  app.get("/tweet/:id", function(req, res) {
-    db.Tweets.findOne({ where: { id: req.params.id } }).then(function(
-      dbTweets
-
-    ) {
-      res.render("example", {
-        tweet: dbTweets
-      });
-    });
->>>>>>> 55eb05a3d966e3bafcdf39e28cf04182538754b8
   });
 
   // Load example page and pass in an example by id
