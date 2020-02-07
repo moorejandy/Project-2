@@ -28,3 +28,7 @@ window.onload = function() {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 };
+
+setTimeout(function() {
+  $(".container").remove();
+}, 5000);

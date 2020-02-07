@@ -622,7 +622,7 @@
   }
   
   .core > .path {
-    fill: #EF836E;
+    fill: rgb(110, 198, 239);
     visibility: hidden;
     -moz-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
@@ -715,7 +715,7 @@
     opacity: 0;
   }
   .spinner > .path {
-    stroke: #EF836E;
+    stroke: rgb(8, 70, 244);
     stroke-width: 6;
     stroke-dasharray: 157;
     stroke-dashoffset: 157;
@@ -873,7 +873,7 @@
     transform-origin: 50% 50%;
     z-index: 1;
   }
-  .btn:after {
+  /* .btn:after {
     content: "RELOAD";
     position: absolute;
     text-align: center;
@@ -882,7 +882,7 @@
     -ms-user-select: none;
     -webkit-user-select: none;
     user-select: none;
-  }
+  } */
   .loaded .btn {
     color: #fff;
     background: #EF836E;
@@ -890,13 +890,13 @@
     -webkit-animation: btn-loaded 0.1s both 0.5s;
     animation: btn-loaded 0.1s both 0.5s;
   }
-  .restart .btn {
+  /* .restart .btn {
     color: #EF836E;
     background: #EF836E;
     -moz-animation: btn-restart 0.1s both;
     -webkit-animation: btn-restart 0.1s both;
     animation: btn-restart 0.1s both;
-  }
+  } */
   
   .w5 {
     width: 5%;
