@@ -8,7 +8,7 @@ module.exports = function(app) {
     });
   });
 
-  // Create a new example
+  // Create a new user
   app.post("/users/create", function(req, res) {
     db.Users.create({
       name: req.body.name

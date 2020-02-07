@@ -213,7 +213,13 @@ $(document).on("click", "#start", function() {
 
 $("#start-button").on("submit", function(event) {
   event.preventDefault();
+
+  var name = $(this)
+    .children("#start-button")
+    .val();
+
   var name = $("#textbox").val();
+
   $.ajax("/users/create", {
     method: "POST",
     data: name
