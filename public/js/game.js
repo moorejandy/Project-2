@@ -213,15 +213,14 @@ $(document).on("click", "#start", function() {
 
 $("#start-button").on("submit", function(event) {
   event.preventDefault();
-  // eslint-disable-next-line no-unused-vars
   var name = $(this)
     .children("#start-button")
     .val();
-  $.ajax({
+  $.ajax("/users/create", {
     method: "POST",
-    url: "/users/create"
+    data: name
     // eslint-disable-next-line no-unused-vars
   }).then(function(data) {
-    location.assign("/games");
+    console.log(name);
   });
 });
