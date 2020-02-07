@@ -1,3 +1,24 @@
 .list-group-item {
   line-height: 2.5;
 }
+body{
+  background-image: url(https://i.guim.co.uk/img/media/e2c62646f454b30ff9882efbef20c28f32d53191/0_0_805_1005/master/805.jpg?width=700&quality=85&auto=format&fit=max&s=13a0a594e06fad7c952ceafa3fc8a8ae);
+  background-repeat: no-repeat;
+  /* height: 200%; */
+  background-attachment: fixed;
+  /* width:100%; */
+  background-position: center; 
+  background-color: black;
+  font: black Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.header{
+  text-align: center;
+  font-size: 50px;
+}
+
+
+#quiz-area{
+  background-color: lightgray;
+
+}

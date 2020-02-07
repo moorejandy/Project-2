@@ -19,8 +19,8 @@ var questions = [
     answers: ["45", "67", "27", "16"],
     correctAnswer: "16",
     image: "assets/images/spicegirls.gif",
-    imageC: "../images/Tright1.webp",
-    imageW: "../images/Twrong1.webp"
+    imageC: "../images/Tright2.webp",
+    imageW: "../images/Twrong2.webp"
   },
   {
     tweet:
@@ -28,8 +28,8 @@ var questions = [
     question: "Fill in the blank",
     answers: ["Hillary Clinton", "Megyn Kelly", "Bette Midler", "Betty White"],
     correctAnswer: "Bette Midler",
-    imageC: "../images/Tright1.webp",
-    imageW: "../images/Twrong1.webp"
+    imageC: "../images/Tright3.webp",
+    imageW: "../images/Twrong3.webp"
   },
   {
     tweet:
@@ -46,8 +46,8 @@ var questions = [
     question: "True or False - This is a real tweet.",
     answers: ["True", "False"],
     correctAnswer: "True",
-    imageC: "../images/Tright1.webp",
-    imageW: "../images/Twrong1.webp"
+    imageC: "../images/Tright2.webp",
+    imageW: "../images/Twrong2.webp"
   }
 ];
 
@@ -213,9 +213,13 @@ $(document).on("click", "#start", function() {
 
 $("#start-button").on("submit", function(event) {
   event.preventDefault();
+
   var name = $(this)
     .children("#start-button")
     .val();
+
+  var name = $("#textbox").val();
+
   $.ajax("/users/create", {
     method: "POST",
     data: name
