@@ -9,7 +9,8 @@ var questions = [
     question: "Fill in the blank",
     answers: ["Avian flu", "Windmills", "Hunting", "Coronavirus"],
     correctAnswer: "Windmills",
-    image: "assets/images/toystory.gif"
+    imageC: "../images/Tright1.webp",
+    imageW: "../images/Twrong1.webp"
   },
   {
     tweet:
@@ -17,7 +18,9 @@ var questions = [
     question: "How old was Greta when this tweet was sent?",
     answers: ["45", "67", "27", "16"],
     correctAnswer: "16",
-    image: "assets/images/spicegirls.gif"
+    image: "assets/images/spicegirls.gif",
+    imageC: "../images/Tright1.webp",
+    imageW: "../images/Twrong1.webp"
   },
   {
     tweet:
@@ -25,7 +28,8 @@ var questions = [
     question: "Fill in the blank",
     answers: ["Hillary Clinton", "Megyn Kelly", "Bette Midler", "Betty White"],
     correctAnswer: "Bette Midler",
-    image: "assets/images/spicegirls.gif"
+    imageC: "../images/Tright1.webp",
+    imageW: "../images/Twrong1.webp"
   },
   {
     tweet:
@@ -33,7 +37,8 @@ var questions = [
     question: "Fill in the blank",
     answers: ["Arianna Huffington", "Nancy Pelosi", "Cher", "Betty White"],
     correctAnswer: "Arianna Huffinton",
-    image: "assets/images/spicegirls.gif"
+    imageC: "../images/Tright1.webp",
+    imageW: "../images/Twrong1.webp"
   },
   {
     tweet:
@@ -41,7 +46,8 @@ var questions = [
     question: "True or False - This is a real tweet.",
     answers: ["True", "False"],
     correctAnswer: "True",
-    image: "assets/images/spicegirls.gif"
+    imageC: "../images/Tright1.webp",
+    imageW: "../images/Twrong1.webp"
   }
 ];
 
@@ -67,7 +73,18 @@ var game = {
   loadQuestion: function() {
     timer = setInterval(this.countdown.bind(this), 1000);
 
-    card.html("<h2>" + questions[this.currentQuestion].question + "</h2>");
+    // card.html("<h2>" + questions[this.currentQuestion].tweet + "</h2>");
+
+    card.html(
+      "<h2>" +
+        questions[this.currentQuestion].tweet +
+        "</h2>" +
+        "<br>" +
+        "<br>" +
+        "<h2>" +
+        questions[this.currentQuestion].question +
+        "</h2>"
+    );
 
     for (var i = 0; i < questions[this.currentQuestion].answers.length; i++) {
       card.append(
@@ -97,7 +114,7 @@ var game = {
       "<h3>The Correct Answer was: " +
         questions[this.currentQuestion].correctAnswer
     );
-    card.append("<img src='" + questions[this.currentQuestion].image + "' />");
+    card.append("<img src='" + questions[this.currentQuestion].imageW + "' />");
 
     if (this.currentQuestion === questions.length - 1) {
       setTimeout(this.results, 3 * 1000);
@@ -146,7 +163,7 @@ var game = {
         questions[this.currentQuestion].correctAnswer +
         "</h3>"
     );
-    card.append("<img src='" + questions[this.currentQuestion].image + "' />");
+    card.append("<img src='" + questions[this.currentQuestion].imageW + "' />");
 
     if (this.currentQuestion === questions.length - 1) {
       setTimeout(this.results.bind(this), 3 * 1000);
@@ -161,7 +178,7 @@ var game = {
     this.correct++;
 
     card.html("<h2>Correct!</h2>");
-    card.append("<img src='" + questions[this.currentQuestion].image + "' />");
+    card.append("<img src='" + questions[this.currentQuestion].imageC + "' />");
 
     if (this.currentQuestion === questions.length - 1) {
       setTimeout(this.results.bind(this), 3 * 1000);
@@ -192,4 +209,19 @@ $(document).on("click", "#start", function() {
     "<h2>Time Remaining: <span id='counter-number'>30</span> Seconds</h2>"
   );
   game.loadQuestion.bind(game)();
+});
+
+$("#start-button").on("submit", function(event) {
+  event.preventDefault();
+  // eslint-disable-next-line no-unused-vars
+  var name = $(this)
+    .children("#start-button")
+    .val();
+  $.ajax({
+    method: "POST",
+    url: "/users/create"
+    // eslint-disable-next-line no-unused-vars
+  }).then(function(data) {
+    location.assign("/games");
+  });
 });
