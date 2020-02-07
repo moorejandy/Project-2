@@ -5,28 +5,18 @@
 <div class="rules">
 </div>
 
-        <h3>Enter your name then click START to take on the challenge.</h3><h3>Can you answer the questions correctly to escape Trump's twitter feed?</h3>
+        <h3>Enter your name then click on the flag to take on the challenge.</h3><h3>Can you answer the questions correctly to escape Trump's twitter feed?</h3>
 </div>
 
-
-<div class="trump-button">
-        <input type="image" src="/images/shutterstock_editorial_10434333bm.jpg"  alt="Trump-yelling" class="trump-img">
-    
-
-
-<div class="input-box">
-  <input type="text" class="input-box" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-  <a href="/all-tweets" alt="See Tweets!">
-    <input type="image" id="start" src="/images/shutterstock_editorial_10434333bm.jpg"  alt="Trump-yelling" class="btn">
-  </a>
-
+<div class="img-txt">
+  <div class="trump-button">
+    <input type="image" src="/images/shutterstock_editorial_10434333bm.jpg"  alt="Trump-yelling" class="trump-img">
+  </div>
+  <form action="users/create" method="POST">
+    <input type="text" id="textbox" name="name" ><br>
+    <input type="submit" id="start-button" value="START">
+  </form>
 </div>
-<form>
-  <input type="text" id="textbox" name="name" ><br>
-    <a href="/games" alt="See Tweets!"></a>
-  <input type="submit" id="start-button" value="START">
-</form>
-
 
 
 <div class="container">
