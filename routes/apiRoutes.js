@@ -37,6 +37,7 @@ module.exports = function(app) {
   //   });
   // });
 
+  // eslint-disable-next-line no-unused-vars
   app.post("/game/create", function(req, res) {
     db.Games.create({
       UserId: req.body.UserID,
