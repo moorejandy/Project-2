@@ -8,6 +8,12 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/api/games", function(req, res) {
+    db.Games.findAll({}).then(function(dbGames) {
+      res.json(dbGames);
+    });
+  });
+
   // Create a new user
   app.post("/users/create", function(req, res) {
     db.Users.create({
@@ -15,6 +21,15 @@ module.exports = function(app) {
     }).then(function(dbUsers) {
       console.log(dbUsers);
       res.redirect("/game");
+    });
+  });
+
+  app.post("/game/create", function(req, res) {
+    db.Games.create({
+      score: score
+    }).then(function(dbGames) {
+      console.log(dbGames);
+      res.redirect("/");
     });
   });
 

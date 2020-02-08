@@ -20,6 +20,7 @@ h1{
 }
 
 #quiz-area{
+
   background-color: rgba(220,220,220,0.5);
   margin-left: 80px;
   margin-right: 80px;
@@ -36,4 +37,3 @@ h1{
   background-color: silver;
   border-radius: 4;
 }
-

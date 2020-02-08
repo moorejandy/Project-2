@@ -76,10 +76,9 @@ var game = {
     // card.html("<h2>" + questions[this.currentQuestion].tweet + "</h2>");
 
     card.html(
-      "<h2>" +
+      "<h1>" +
         questions[this.currentQuestion].tweet +
-        "</h2>" +
-        "<br>" +
+        "</h1>" +
         "<br>" +
         "<h2>" +
         questions[this.currentQuestion].question +
@@ -95,6 +94,7 @@ var game = {
           "</button>"
       );
     }
+    $("#quiz-area").style.display = "block";
   },
 
   nextQuestion: function() {
@@ -121,6 +121,8 @@ var game = {
     } else {
       setTimeout(this.nextQuestion, 3 * 1000);
     }
+    card.append("<br><button id='start-over'>Exit Game?</button>");
+    this.results();
   },
 
   results: function() {
@@ -137,7 +139,7 @@ var game = {
         (questions.length - (this.incorrect + this.correct)) +
         "</h3>"
     );
-    card.append("<br><button id='start-over'>Start Over?</button>");
+    card.append("<br><button id='start-over'>Exit-Game</button>");
   },
 
   clicked: function(e) {
@@ -198,13 +200,18 @@ var game = {
 
 // CLICK EVENTS
 
-$(document).on("click", "#start-over", game.reset.bind(game));
+// $(document).on("click", "#start-over", game.reset.bind(game));
+
+$(document).on("click", "#start-over", function() {
+  window.location.href = "/";
+});
 
 $(document).on("click", ".answer-button", function(e) {
   game.clicked.bind(game, e)();
 });
 
 $(document).on("click", "#start", function() {
+  $("#quiz-area").show();
   $("#sub-wrapper").prepend(
     "<h2>Time Remaining: <span id='counter-number'>30</span> Seconds</h2>"
   );
@@ -225,6 +232,20 @@ $("#start-button").on("submit", function(event) {
     data: name
     // eslint-disable-next-line no-unused-vars
   }).then(function(data) {
-    console.log(name);
+    // console.log(name);
   });
 });
+
+// $("#start-over").on("submit", function(event) {
+//   event.preventDefault();
+
+//   var score = this.correct;
+
+//   $.ajax("/game/create", {
+//     method: "POST",
+//     data: score
+//     // eslint-disable-next-line no-unused-vars
+//   }).then(function(data) {
+//     console.log(this.correct);
+//   });
+// });
