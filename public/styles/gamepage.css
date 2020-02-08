@@ -4,23 +4,36 @@
 body{
   background-image: url(https://i.guim.co.uk/img/media/e2c62646f454b30ff9882efbef20c28f32d53191/0_0_805_1005/master/805.jpg?width=700&quality=85&auto=format&fit=max&s=13a0a594e06fad7c952ceafa3fc8a8ae);
   background-repeat: no-repeat;
-  /* height: 200%; */
   background-attachment: fixed;
-  /* width:100%; */
   background-position: center; 
   background-color: black;
   font: black Verdana, Geneva, Tahoma, sans-serif;
   text-align: center;
 }
 
-.header{
-  text-align: center;
+h1{
   font-size: 50px;
 }
 
+#sub-wrapper{
+  margin-top: 130px;
+}
 
 #quiz-area{
-  background-color: lightgray;
-  display: none;
 
+  background-color: rgba(220,220,220,0.5);
+  margin-left: 80px;
+  margin-right: 80px;
+  border-radius: 3px;
+  padding-bottom: 5px;
+  display:none;
+  /* margin-bottom: 5px; */
+}
+
+.start{
+  font-weight: bold;
+  margin-top:130px; 
+  height:30px;
+  background-color: silver;
+  border-radius: 4;
 }
