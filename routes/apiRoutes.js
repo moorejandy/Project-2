@@ -19,17 +19,30 @@ module.exports = function(app) {
     db.Users.create({
       name: req.body.name
     }).then(function(dbUsers) {
-      console.log(dbUsers);
+      console.log("===================");
+      console.log(dbUsers.dataValues);
+      console.log("===================");
+      // console.log(dbUsers);
       res.redirect("/game");
+      res.json(dbUsers);
     });
   });
 
+  // app.post("/game/create", function(req, res) {
+  //   db.Games.create({
+  //     score: req.body.score
+  //   }).then(function(dbGames) {
+  //     console.log(dbGames);
+  //     res.redirect("/");
+  //   });
+  // });
+
   app.post("/game/create", function(req, res) {
     db.Games.create({
-      score: score
-    }).then(function(dbGames) {
-      console.log(dbGames);
-      res.redirect("/");
+      UserId: req.body.UserID,
+      score: req.body.score
+    }).then(function(result) {
+      console.log(result);
     });
   });
 

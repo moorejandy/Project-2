@@ -1,5 +1,5 @@
 var card = $("#quiz-area");
-var countStartNumber = 30;
+var countStartNumber = 20;
 
 // Question set
 var questions = [
@@ -202,6 +202,17 @@ var game = {
 // $(document).on("click", "#start-over", game.reset.bind(game));
 
 $(document).on("click", "#start-over", function() {
+  event.preventDefault();
+
+  var score = game.correct;
+
+  $.ajax("/game/create", {
+    method: "POST",
+    data: score
+    // eslint-disable-next-line no-unused-vars
+  }).then(function(data) {
+    console.log(score);
+  });
   window.location.href = "/";
 });
 
@@ -231,20 +242,26 @@ $("#start-button").on("submit", function(event) {
     data: name
     // eslint-disable-next-line no-unused-vars
   }).then(function(data) {
-    // console.log(name);
+    console.log("++++++++++++++");
+    console.log(data.dataValues.id);
+    console.log("++++++++++++++");
+    game.userID = data.dataValues.id;
   });
 });
 
 $("#start-over").on("submit", function(event) {
   event.preventDefault();
 
-  var score = this.correct;
+  var score = game.correct;
 
   $.ajax("/game/create", {
     method: "POST",
-    data: score
+    data: {
+      UserId: game.userID,
+      score: score
+    }
     // eslint-disable-next-line no-unused-vars
   }).then(function(data) {
-    console.log(this.correct);
+    console.log(score);
   });
 });
