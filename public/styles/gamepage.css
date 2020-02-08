@@ -10,6 +10,7 @@ body{
   background-position: center; 
   background-color: black;
   font: black Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
 }
 
 .header{
@@ -20,5 +21,6 @@ body{
 
 #quiz-area{
   background-color: lightgray;
+  display: none;
 
 }
