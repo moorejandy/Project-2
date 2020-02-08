@@ -36,7 +36,7 @@ var questions = [
       "________ is unattractive both inside and out. I fully understand why her former husband left her for a man - he made a good decision.",
     question: "Fill in the blank",
     answers: ["Arianna Huffington", "Nancy Pelosi", "Cher", "Betty White"],
-    correctAnswer: "Arianna Huffinton",
+    correctAnswer: "Arianna Huffington",
     imageC: "../images/Tright1.webp",
     imageW: "../images/Twrong1.webp"
   },
@@ -94,7 +94,6 @@ var game = {
           "</button>"
       );
     }
-    $("#quiz-area").style.display = "block";
   },
 
   nextQuestion: function() {
@@ -236,16 +235,16 @@ $("#start-button").on("submit", function(event) {
   });
 });
 
-// $("#start-over").on("submit", function(event) {
-//   event.preventDefault();
+$("#start-over").on("submit", function(event) {
+  event.preventDefault();
 
-//   var score = this.correct;
+  var score = this.correct;
 
-//   $.ajax("/game/create", {
-//     method: "POST",
-//     data: score
-//     // eslint-disable-next-line no-unused-vars
-//   }).then(function(data) {
-//     console.log(this.correct);
-//   });
-// });
+  $.ajax("/game/create", {
+    method: "POST",
+    data: score
+    // eslint-disable-next-line no-unused-vars
+  }).then(function(data) {
+    console.log(this.correct);
+  });
+});
