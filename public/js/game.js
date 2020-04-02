@@ -222,6 +222,7 @@ $(document).on("click", ".answer-button", function(e) {
 
 $(document).on("click", "#start", function() {
   $("#quiz-area").show();
+  $("#wrapper").empty();
   $("#sub-wrapper").prepend(
     "<h2>Time Remaining: <span id='counter-number'>30</span> Seconds</h2>"
   );
