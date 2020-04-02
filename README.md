@@ -6,6 +6,7 @@ Version 1.0
 
 Deployment Date: February 8, 2020
 
+## [Link to deployed app](https://stormy-atoll-88031.herokuapp.com/)
 
 # Purpose
 
@@ -15,6 +16,7 @@ Upon clicking on the computer, you, the player will sucked into the Trump’s Tw
 1. Enter name a click START!
 2. You have 30 seconds to read and answer the question associated with each tweet.
 
+![screenshot](public/images/appscreenshot.png)
 
 # Original Wireframe
 <img src="public/images/wireframe.jpg" alt="wireframe"/>
