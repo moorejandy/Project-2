@@ -18,6 +18,18 @@ Upon clicking on the computer, you, the player will sucked into the Trump’s Tw
 
 ![screenshot](public/images/appscreenshot.png)
 
+# Technologies
+* Express
+* Node.js
+* express-handlebars
+* CSS
+* JavaScript
+* jQuery
+* Travis CLI
+* SQL
+* Sequelize
+
+
 # Original Wireframe
 <img src="public/images/wireframe.jpg" alt="wireframe"/>
 
